@@ -2,13 +2,7 @@ package com.cognizant.moviecruiser.model;
 
 import java.util.Date;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-
-@Entity
 public class Movie {
-	
-	@Id
 	private long id;
 	private String title;
 	private String boxOffice;
@@ -17,19 +11,11 @@ public class Movie {
 	private String genre;
 	private boolean hasTeaser;
 
-	public Movie(long id, String title, String boxOffice, boolean active, Date dateOfLaunch,
-			String genre, boolean hasTeaser) {
-		super();
-		this.id = id;
-		this.title = title;
-		this.boxOffice = boxOffice;
-		this.active = active;
-		this.dateOfLaunch = dateOfLaunch;
-		this.genre = genre;
-		this.hasTeaser = hasTeaser;
-	}
+	
+
 	public Movie() {
-		
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
 	public long getId() {
@@ -90,30 +76,9 @@ public class Movie {
 
 	@Override
 	public String toString() {
-		return String.format("%-15s%-10s %-5s%-25s%-10s%-5s", title, boxOffice,
+		return String.format("%-3d %-20s %-15s %-8b %-30s %-18s %-15b", id, title, boxOffice,
 				active, dateOfLaunch, genre, hasTeaser);
 	}
 
-//	@Override
-//	public int hashCode() {
-//		final int prime = 31;
-//		int result = 1;
-//		result = prime * result + (int) (id ^ (id >>> 32));
-//		return result;
-//	}
-//
-//	@Override
-//	public boolean equals(Object obj) {
-//		if (this == obj)
-//			return true;
-//		if (obj == null)
-//			return false;
-//		if (getClass() != obj.getClass())
-//			return false;
-//		Movie other = (Movie) obj;
-//		if (id != other.id)
-//			return false;
-//		return true;
-//	}
 
 }
